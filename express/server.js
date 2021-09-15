@@ -47,11 +47,6 @@ app.use('/npm', async (req, res) => {
     res.send(`Add the package name in the correct format to get all package version in JSON /npm/:packageName or /npm/:scoped/:packageName`)
 })
 
-//The 404 Route (ALWAYS Keep this as the last route)
-app.use('*', function(req, res){
-    res.status(404).send(`Add the package name in the correct format to get all package version in JSON /npm/:packageName or /npm/:scoped/:packageName`)
-});
-
 module.exports = app;
 module.exports.handler = serverless(app);
 
